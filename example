@@ -1,12 +1,14 @@
 CREATE TABLE employees (
     id INT PRIMARY KEY,
-    name VARCHAR(50),
-    role VARCHAR(50)
+    full_name VARCHAR(100),
+    job_title VARCHAR(50),
+    hire_date DATE
 );
 
-INSERT INTO employees VALUES (1, 'Anna', 'Designer');
-INSERT INTO employees VALUES (2, 'Mark', 'Developer');
+INSERT INTO employees VALUES (1, 'Anna Smith', 'Product Designer', '2024-03-12');
+INSERT INTO employees VALUES (2, 'Mark Johnson', 'Backend Developer', '2023-11-05');
 
-SELECT name, role 
+SELECT full_name, job_title, hire_date
 FROM employees
-WHERE role = 'Designer';
+WHERE hire_date > '2024-01-01'
+ORDER BY hire_date DESC;
